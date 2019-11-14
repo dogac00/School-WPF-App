@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <DataGrid Width="500px" Height="400px"/>
 
     </Grid>
 </Window>

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\asus\\source\\repos\\SchoolApp\\SchoolApp\\SchoolApp.csproj": {}
+    "C:\\Users\\asus\\Desktop\\SchoolApp\\School-WPF-App\\SchoolApp\\SchoolApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\asus\\source\\repos\\SchoolApp\\SchoolApp\\SchoolApp.csproj": {
+    "C:\\Users\\asus\\Desktop\\SchoolApp\\School-WPF-App\\SchoolApp\\SchoolApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\asus\\source\\repos\\SchoolApp\\SchoolApp\\SchoolApp.csproj",
+        "projectUniqueName": "C:\\Users\\asus\\Desktop\\SchoolApp\\School-WPF-App\\SchoolApp\\SchoolApp.csproj",
         "projectName": "SchoolApp",
-        "projectPath": "C:\\Users\\asus\\source\\repos\\SchoolApp\\SchoolApp\\SchoolApp.csproj",
+        "projectPath": "C:\\Users\\asus\\Desktop\\SchoolApp\\School-WPF-App\\SchoolApp\\SchoolApp.csproj",
         "packagesPath": "C:\\Users\\asus\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\asus\\source\\repos\\SchoolApp\\SchoolApp\\obj\\",
+        "outputPath": "C:\\Users\\asus\\Desktop\\SchoolApp\\School-WPF-App\\SchoolApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,6 +40,34 @@
       },
       "frameworks": {
         "netcoreapp3.0": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
