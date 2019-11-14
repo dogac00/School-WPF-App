@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="300" Width="470">
     <Grid>
-        <DataGrid Width="500px" Height="400px"/>
+        <Label x:Name="Header" Content="Welcome to School App" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontFamily="Arial" FontSize="16" Foreground="#FF5E00FF"/>
+        <Button x:Name="OpenStudentWindowButton" Content="Students Page" HorizontalAlignment="Center" Margin="0,87,0,0" VerticalAlignment="Top" Height="40" Width="206" Background="#FFA464E0" Click="OpenStudentWindowButton_Click"/>
+        <Button x:Name="OpenCourseWindowButton" Content="Course Page" HorizontalAlignment="Center" Margin="0,177,0,0" VerticalAlignment="Top" Height="40" Width="206" Background="#FFA464E0" Click="OpenCourseWindowButton_Click"/>
 
     </Grid>
 </Window>

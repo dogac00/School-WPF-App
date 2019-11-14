@@ -5,13 +5,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SchoolApp
 {
-    class SchoolDbContext : DbContext
+    public class SchoolDbContext : DbContext
     {
-        private static string _connectionString = @"Server=(localdb)\MSSQLLocalDB; Database=SchoolDb; Trusted_Connection=True;";
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options)
         {
-            optionsBuilder.UseSqlServer(_connectionString);
+            
         }
 
         public DbSet<Student> Students { get; set; }

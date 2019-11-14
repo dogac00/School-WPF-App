@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NETCOREAPP;NETCOREAPP3_0
 C:\Users\asus\Desktop\SchoolApp\School-WPF-App\SchoolApp\App.xaml
-11151548125
+3-1359564331
 
-9-482635007
+13111581444
 2241966011283
-MainWindow.xaml;
+MainWindow.xaml;Windows\CourseWindow.xaml;Windows\StudentWindow.xaml;
 
 False
 
