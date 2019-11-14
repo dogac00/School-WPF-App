@@ -8,7 +8,7 @@ namespace SchoolApp
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow(SchoolDbContext context)
+        public MainWindow()
         {
             InitializeComponent();
         }

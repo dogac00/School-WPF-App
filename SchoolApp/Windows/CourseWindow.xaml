@@ -7,6 +7,11 @@
         mc:Ignorable="d"
         Title="CourseWindow" Height="450" Width="800">
     <Grid>
-        
+        <Button x:Name="AddCourseButton" Content="Add Course" HorizontalAlignment="Left" Margin="26,25,0,0" VerticalAlignment="Top" Height="41" Width="215"/>
+        <Button x:Name="DeleteCourse" Content="Delete Course" HorizontalAlignment="Center" Margin="0,25,0,0" VerticalAlignment="Top" Height="41" Width="224"/>
+        <Button x:Name="EditCourseButton" Content="Edit Course" HorizontalAlignment="Left" Margin="556,25,0,0" VerticalAlignment="Top" Height="41" Width="210"/>
+        <DataGrid Margin="10,116,10,10"/>
+        <Label x:Name="AllStudentsLabel" Content="All Students" HorizontalAlignment="Center" Margin="0,85,0,0" VerticalAlignment="Top" Width="108" FontSize="16" FontFamily="Arial" Foreground="#FF9800FF"/>
+
     </Grid>
 </Window>
