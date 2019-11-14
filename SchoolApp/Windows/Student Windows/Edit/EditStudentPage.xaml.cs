@@ -9,6 +9,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
 
 namespace SchoolApp.Windows.Student_Windows
 {
@@ -19,13 +20,15 @@ namespace SchoolApp.Windows.Student_Windows
     {
         private readonly Student _student;
         private readonly SchoolDbContext _context;
+        private readonly DataGrid _grid;
 
-        public EditStudentPage(Student student)
+        public EditStudentPage(Student student, DataGrid grid)
         {
             InitializeComponent();
 
             _student = student;
             _context = App.Context;
+            _grid = grid;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -41,9 +44,20 @@ namespace SchoolApp.Windows.Student_Windows
             _student.StudentId = this.StudentIdTextBox.Text;
             _student.BirthDate = this.StudentDateTextBox.SelectedDate.GetValueOrDefault(DateTime.Now);
 
-            App.Context.Students.Update(_student);
+            _context.Students.Update(_student);
 
-            await App.Context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
+
+            MessageBox.Show("Student is edited successfully.");
+
+            LoadStudents();
+        }
+
+        private async void LoadStudents()
+        {
+            await _context.Students.LoadAsync();
+
+            this._grid.ItemsSource = await _context.Students.ToListAsync();
         }
     }
 }

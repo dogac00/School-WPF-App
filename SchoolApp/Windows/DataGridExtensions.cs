@@ -28,7 +28,7 @@ namespace SchoolApp.Windows
             );
         }
 
-        public static void BindSet<T>(this DataGrid grid, DbSet<T> set) where T : class
+        public static void BindLocal<T>(this DataGrid grid, DbSet<T> set) where T : class
         {
             grid.ItemsSource = set.Local.ToObservableCollection();
         }

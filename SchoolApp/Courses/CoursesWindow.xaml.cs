@@ -9,11 +9,11 @@ namespace SchoolApp.Windows
     /// <summary>
     /// Interaction logic for StudentWindow.xaml
     /// </summary>
-    public partial class StudentWindow : Window
+    public partial class CourseWindow : Window
     {
         private readonly SchoolDbContext _context;
 
-        public StudentWindow()
+        public CourseWindow()
         {
             InitializeComponent();
 
@@ -22,48 +22,48 @@ namespace SchoolApp.Windows
 
         private async void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            await _context.Students.LoadAsync();
+            await _context.Courses.LoadAsync();
 
-            this.StudentsGrid.AddButtonColumn("Edit", EditStudent);
-            this.StudentsGrid.AddButtonColumn("Delete", DeleteStudent);
+            this.CoursesGrid.AddButtonColumn("Edit", EditCourse);
+            this.CoursesGrid.AddButtonColumn("Delete", DeleteCourse);
 
-            this.StudentsGrid.BindLocal(_context.Students);
+            this.CoursesGrid.BindLocal(_context.Courses);
         }
 
-        private void EditStudent(object sender, RoutedEventArgs e)
+        private void EditCourse(object sender, RoutedEventArgs e)
         {
-            Student student = this.StudentsGrid.CurrentCell.Item as Student;
+            Course course = this.CoursesGrid.CurrentCell.Item as Course;
 
-            if (student == null)
+            if (course == null)
             {
                 MessageBox.Show("There is no student to edit.");
 
                 return;
             }
 
-            EditStudentPage esp = new EditStudentPage(student, this.StudentsGrid);
+            EditCoursePage ecp = new EditCoursePage(course, this.CoursesGrid);
 
-            esp.Show();
+            ecp.Show();
         }
 
-        private async void DeleteStudent(object sender, RoutedEventArgs e)
+        private async void DeleteCourse(object sender, RoutedEventArgs e)
         {
-            Student student = this.StudentsGrid.CurrentCell.Item as Student;
+            Course course = this.CoursesGrid.CurrentCell.Item as Course;
 
-            if (student == null)
+            if (course == null)
             {
-                MessageBox.Show("There is no student to delete.");
+                MessageBox.Show("There is no course to delete.");
 
                 return;
             }
 
-            _context.Students.Remove(student);
+            _context.Courses.Remove(course);
 
             await _context.SaveChangesAsync();
 
-            MessageBox.Show("Student is removed successfully.");
+            MessageBox.Show("Course is removed successfully.");
 
-            this.StudentsGrid.BindLocal(_context.Students);
+            this.CoursesGrid.BindLocal(_context.Courses);
         }
 
         private void StudentsGrid_OnAutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -80,9 +80,9 @@ namespace SchoolApp.Windows
 
         private void AddStudent_Click(object sender, RoutedEventArgs e)
         {
-            AddStudentPage asp = new AddStudentPage(this.StudentsGrid);
+            AddCoursePage acp = new AddCoursePage(this.CoursesGrid);
 
-            asp.Show();
+            acp.Show();
         }
     }
 }

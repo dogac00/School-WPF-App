@@ -5,6 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SchoolApp.Windows"
         mc:Ignorable="d"
-        Title="All Students" Height="352" Width="647" Loaded="Window_Loaded">
-    <DataGrid x:Name="StudentsGrid" Margin="10,0,10,0" Height="313" ColumnWidth="*" AutoGeneratingColumn="StudentsGrid_OnAutoGeneratingColumn"/>
+        Title="All Students" Height="352" Width="733" Loaded="Window_Loaded">
+    <StackPanel>
+        <Button x:Name="AddStudent" Content="Add New" Margin="10,10,10,0" Height="29" Width="Auto" Background="#FF9364A4" Foreground="White" Click="AddStudent_Click"/>
+        <DataGrid x:Name="StudentsGrid" Margin="10,10,10,0" Height="325" ColumnWidth="*" AutoGeneratingColumn="StudentsGrid_OnAutoGeneratingColumn"/>
+    </StackPanel>
 </Window>
