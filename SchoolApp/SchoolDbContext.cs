@@ -7,9 +7,12 @@ namespace SchoolApp
 {
     public class SchoolDbContext : DbContext
     {
-        public SchoolDbContext(DbContextOptions<SchoolDbContext> options) : base(options)
+        private static string connectionString =
+            "Server=(localdb)\\MSSQLLocalDB; Database=SchoolDb; Trusted_Connection=True;";
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            
+            optionsBuilder.UseSqlServer(connectionString);
         }
 
         public DbSet<Student> Students { get; set; }

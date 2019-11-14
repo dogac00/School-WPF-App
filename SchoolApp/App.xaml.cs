@@ -7,6 +7,6 @@ namespace SchoolApp
     /// </summary>
     public partial class App : Application
     {
-
+        public static SchoolDbContext Context { get; } = new SchoolDbContext();
     }
 }
