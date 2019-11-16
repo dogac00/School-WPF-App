@@ -40,13 +40,11 @@ namespace SchoolApp.Windows.Student_Windows
 
         private async void EditStudentButton_Click(object sender, RoutedEventArgs e)
         {
-            Course course = new Course();
-
             try
             {
-                course.Code = this.CourseCodeTextBox.Text;
-                course.Credit = int.Parse(this.CourseCreditTextBox.Text);
-                course.Quota = int.Parse(this.CourseQuotaTextBox.Text);
+                _course.Code = this.CourseCodeTextBox.Text;
+                _course.Credit = int.Parse(this.CourseCreditTextBox.Text);
+                _course.Quota = int.Parse(this.CourseQuotaTextBox.Text);
             }
             catch
             {
@@ -55,7 +53,7 @@ namespace SchoolApp.Windows.Student_Windows
                 return;
             }
 
-            _context.Courses.Update(course);
+            _context.Courses.Update(_course);
 
             await _context.SaveChangesAsync();
 
