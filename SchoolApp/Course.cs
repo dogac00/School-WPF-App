@@ -1,4 +1,6 @@
-﻿namespace SchoolApp
+﻿using System.Reflection.PortableExecutable;
+
+namespace SchoolApp
 {
     public class Course
     {

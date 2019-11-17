@@ -40,18 +40,19 @@ namespace SchoolApp.Windows.Student_Windows
 
         private async void EditStudentButton_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                _course.Code = this.CourseCodeTextBox.Text;
-                _course.Credit = int.Parse(this.CourseCreditTextBox.Text);
-                _course.Quota = int.Parse(this.CourseQuotaTextBox.Text);
-            }
-            catch
+            int credit, quota;
+
+            if (!int.TryParse(this.CourseCreditTextBox.Text, out credit) ||
+                !int.TryParse(this.CourseQuotaTextBox.Text, out quota))
             {
                 MessageBox.Show("Please enter valid values.");
 
                 return;
             }
+
+            _course.Code = this.CourseCodeTextBox.Text;
+            _course.Credit = credit;
+            _course.Quota = quota;
 
             _context.Courses.Update(_course);
 

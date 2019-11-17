@@ -36,7 +36,7 @@ namespace SchoolApp.Windows
 
             if (course == null)
             {
-                MessageBox.Show("There is no student to edit.");
+                MessageBox.Show("There is no course to edit.");
 
                 return;
             }
